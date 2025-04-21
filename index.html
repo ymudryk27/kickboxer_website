@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piotr Siegoczyński – Mistrz Świata w Kickboxingu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden
+        }
+
+        header {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden
+        }
+
+        .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            filter: brightness(0.75)
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: center
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0
+        }
+
+        nav ul li {
+            margin: 0 15px
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color .3s
+        }
+
+        nav ul li a:hover {
+            color: #f00
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff
+        }
+
+        .hero-content h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            opacity: 0
+        }
+
+        .hero-content p {
+            font-size: 1.5em;
+            opacity: 0
+        }
+
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1
+        }
+
+        section:nth-child(even) {
+            background: #f5f5f5
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px
+        }
+
+        .achievements-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px
+        }
+
+        .achievement {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 260px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform .3s
+        }
+
+        .achievement:hover {
+            transform: translateY(-10px)
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            display: block;
+            border-radius: 8px;
+            transition: transform .3s
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05)
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+        }
+
+        .contact-form button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 4px;
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background .3s
+        }
+
+        .contact-form button:hover {
+            background: #333
+        }
+
+        footer {
+            background: #111;
+            color: #ccc;
+            padding: 20px;
+            text-align: center
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <button class="nav-toggle" aria-label="відкрити меню">
+            ☰
+        </button>
+        <ul class="nav-list">
+            <li><a href="#home">Strona Główna</a></li>
+            <li><a href="#o-mnie">O mnie</a></li>
+            <li><a href="#osiagniecia">Osiągnięcia</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#oferta">Oferta</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <div class="video-wrapper">
+            <video class="video-desktop" autoplay muted loop playsinline>
+                <source src="videos/1.mp4" type="video/mp4">
+            </video>
+            <video class="video-mobile" autoplay muted loop playsinline>
+                <source src="videos/1-portrait.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-content">
+            <h1 data-aos="fade-up" data-aos-delay="200">
+                Piotr Siegoczyński – Mistrz Świata w Kickboxingu
+            </h1>
+            <p data-aos="fade-up" data-aos-delay="400">
+                Sportowiec. Trener. Motywator.
+            </p>
+        </div>
+    </header>
+    <section id="o-mnie" data-aos="fade-up">
+        <h2 class="section-title" data-aos="fade-right" data-aos-duration="800">Moja droga do mistrzostwa</h2>
+        <div class="about-content" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+            <p>Nazywam się Piotr Siegoczyński. Kickboxing to nie tylko moja pasja, to całe moje życie.</p>
+            <p>Od ponad 30 lat jestem związany ze sportami walki – jako zawodnik, reprezentant Polski, a obecnie także
+                trener i mentor. Na swoim koncie mam m.in. tytuł Mistrza Świata WAKO, wielokrotne Mistrzostwo Polski
+                oraz
+                udział w międzynarodowych galach i turniejach.</p>
+            <p>Dziś dzielę się zdobytym doświadczeniem z kolejnymi pokoleniami sportowców, ucząc ich, że w drodze do
+                sukcesu
+                nie ma dróg na skróty — są tylko trening, konsekwencja i wiara w siebie.</p>
+        </div>
+    </section>
+
+    <style>
+        #o-mnie {
+            background: #fff;
+            padding: 80px 20px;
+        }
+
+        #o-mnie .section-title {
+            font-size: 2.5em;
+            color: #222;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #o-mnie .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #444;
+        }
+    </style>
+
+    <script>
+        AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+        gsap.from("#o-mnie .section-title", { duration: 1, opacity: 0, x: -50, delay: 0.4 });
+        gsap.from("#o-mnie .about-content p", {
+            duration: 1,
+            opacity: 0,
+            x: 50,
+            stagger: 0.2,
+            delay: 0.6
+        });
+    </script>
+    <section id="osiagniecia" data-aos="fade-up">
+
+        <section id="osiagniecia" data-aos="fade-up">
+            <h2 class="section-title" data-aos="fade-down" data-aos-duration="800">Najważniejsze sukcesy</h2>
+            <div class="achievements-list">
+                <div class="achievement" data-aos="flip-left" data-aos-duration="600" data-aos-delay="100">🥇 Mistrz
+                    Świata WAKO
+                    (Full Contact)</div>
+                <div class="achievement" data-aos="flip-left" data-aos-duration="600" data-aos-delay="200">🥇 Mistrz
+                    Europy
+                </div>
+                <div class="achievement" data-aos="flip-left" data-aos-duration="600" data-aos-delay="300">🥇 10× Mistrz
+                    Polski
+                    w Kickboxingu</div>
+                <div class="achievement" data-aos="flip-left" data-aos-duration="600" data-aos-delay="400">🇵🇱
+                    Reprezentant
+                    Polski na mistrzostwach świata i Europy</div>
+                <div class="achievement" data-aos="flip-left" data-aos-duration="600" data-aos-delay="500">🥈 Wicemistrz
+                    Europy
+                </div>
+                <div class="achievement" data-aos="flip-left" data-aos-duration="600" data-aos-delay="600">🏆 Laureat
+                    plebiscytu
+                    "Najlepszy sportowiec roku"</div>
+                <div class="achievement" data-aos="flip-left" data-aos-duration="600" data-aos-delay="700">🥋 Trener i
+                    sędzia
+                    międzynarodowy</div>
+            </div>
+        </section>
+
+        <style>
+            #osiagniecia {
+                background: #fff;
+                padding: 80px 20px;
+            }
+
+            #osiagniecia .section-title {
+                text-align: center;
+                font-size: 2.5em;
+                margin-bottom: 40px;
+                color: #111;
+            }
+
+            .achievements-list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .achievement {
+                background: #f0f0f0;
+                border-radius: 8px;
+                padding: 20px;
+                width: 240px;
+                text-align: center;
+                font-size: 1.1em;
+                font-weight: 600;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s, background 0.3s;
+            }
+
+            .achievement:hover {
+                transform: translateY(-8px);
+                background: #e0e0e0;
+            }
+        </style>
+
+        <script>
+            AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+        </script>
+        <section id="galeria" data-aos="fade-up">
+            <h2>Galeria</h2>
+            <div class="gallery-grid">
+                <a href="images/1.jpg" data-lightbox="galeria" data-title="Zdobycie pucharu mistrzowskiego">
+                    <img src="images/1.jpg" alt="Zdobycie pucharu mistrzowskiego" data-aos="zoom-in">
+                </a>
+                <a href="images/2.jpg" data-lightbox="galeria" data-title="Wywiad telewizyjny po walce">
+                    <img src="images/2.jpg" alt="Wywiad telewizyjny po walce" data-aos="zoom-in" data-aos-delay="100">
+                </a>
+                <a href="images/3.jpg" data-lightbox="galeria" data-title="Młodzieńcze treningi kickboxingu">
+                    <img src="images/3.jpg" alt="Młodzieńcze treningi kickboxingu" data-aos="zoom-in"
+                        data-aos-delay="200">
+                </a>
+                <a href="images/4.jpg" data-lightbox="galeria" data-title="Dynamiczna akcja w ringu">
+                    <img src="images/4.jpg" alt="Dynamiczna akcja w ringu" data-aos="zoom-in" data-aos-delay="300">
+                </a>
+            </div>
+        </section>
+        <section id="oferta" data-aos="fade-up">
+            <h2 class="section-title" data-aos="fade-down" data-aos-duration="800">Współpraca i treningi</h2>
+            <div class="offer-list">
+                <div class="offer-item" data-aos="fade-right" data-aos-delay="100">🔹 Treningi personalne z zakresu
+                    kickboxingu,
+                    samoobrony i ogólnej sprawności</div>
+                <div class="offer-item" data-aos="fade-right" data-aos-delay="200">🔹 Seminaria i warsztaty motywacyjne
+                </div>
+                <div class="offer-item" data-aos="fade-right" data-aos-delay="300">🔹 Szkolenia dla klubów i trenerów
+                </div>
+                <div class="offer-item" data-aos="fade-right" data-aos-delay="400">🔹 Wystąpienia gościnne – eventy
+                    sportowe,
+                    konferencje, szkoły</div>
+            </div>
+            <p class="offer-cta" data-aos="zoom-in" data-aos-delay="600">Chcesz trenować z mistrzem? Napisz do mnie.</p>
+        </section>
+
+        <style>
+            #oferta {
+                background: #fafafa;
+                padding: 80px 20px;
+            }
+
+            #oferta .section-title {
+                text-align: center;
+                font-size: 2.5em;
+                margin-bottom: 40px;
+                color: #222;
+            }
+
+            .offer-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 20px;
+                max-width: 1000px;
+                margin: 0 auto 40px;
+            }
+
+            .offer-item {
+                background: #fff;
+                border-left: 4px solid #f00;
+                padding: 20px;
+                border-radius: 6px;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+                font-size: 1.1em;
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+
+            .offer-item:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .offer-cta {
+                text-align: center;
+                font-size: 1.2em;
+                font-weight: 600;
+                color: #f00;
+                margin-top: 20px;
+            }
+        </style>
+
+        <script>
+            AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+        </script>
+
+        </div>
+        <section id="media" data-aos="fade-up">
+            <h2 class="section-title" data-aos="fade-down" data-aos-duration="800">Piotr Siegoczyński w mediach</h2>
+            <div class="media-list" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                <a href="https://pzkickboxing.pl/news/2030,prezes,pzkb,piotr,siegoczynski,nominowanym,tytulu,lidera,sport,biznes,polska.html"
+                    class="media-item" target="_blank">
+                    Nominacja Piotra Siegoczyńskiego na tytuł Lidera Sportu i Biznesu – PZKB
+                </a>
+                <a href="https://przegladsportowy.onet.pl/sporty-walki/dsf-kickboxing-challenge-polska-lotwa-wloclawek/26dzx1h"
+                    class="media-item" target="_blank">
+                    Relacja z DSF Kickboxing Challenge Polska–Łotwa – Przegląd Sportowy
+                </a>
+                <a href="https://www.facebook.com/pzkickboxing/photos/prezes-pzkb-piotr-siegoczy%C5%84ski-grzegorz-wrzesie%C5%84-z-organizatorami-mistrzostw-pol/1075877144575462/?_rdr"
+                    class="media-item" target="_blank">
+                    Galeria zdjęć z organizatorami mistrzostw – Facebook PZKB
+                </a>
+            </div>
+        </section>
+
+        <style>
+            #media {
+                background: #fff;
+                padding: 80px 20px;
+            }
+
+            #media .section-title {
+                text-align: center;
+                font-size: 2.5em;
+                margin-bottom: 40px;
+                color: #111;
+            }
+
+            .media-list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            .media-item {
+                display: block;
+                background: #f0f0f0;
+                padding: 15px 20px;
+                border-radius: 6px;
+                width: 100%;
+                max-width: 600px;
+                text-decoration: none;
+                color: #222;
+                font-weight: 500;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+                transition: transform 0.3s, background 0.3s;
+            }
+
+            .media-item:hover {
+                transform: translateY(-5px);
+                background: #e8e8e8;
+            }
+        </style>
+        <section id="kontakt" data-aos="fade-up">
+            <h2 class="section-title" data-aos="fade-down" data-aos-duration="800">Skontaktuj się ze mną</h2>
+            <div class="contact-info" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                <p>Masz pytania? Chcesz zaprosić mnie na wydarzenie, przeprowadzić trening lub podjąć współpracę?</p>
+                <p>📩 <a href="mailto:kontakt@piotrsiegoczynski.pl">kontakt@piotrsiegoczynski.pl</a></p>
+                <p>📱 <a href="tel:+48123456789">+48 123 456 789</a></p>
+                <p>📍 Warszawa</p>
+            </div>
+        </section>
+
+        <style>
+            #kontakt {
+                background: #fafafa;
+                padding: 80px 20px;
+            }
+
+            #kontakt .section-title {
+                text-align: center;
+                font-size: 2.5em;
+                margin-bottom: 30px;
+                color: #222;
+            }
+
+            #kontakt .contact-info {
+                max-width: 600px;
+                margin: 0 auto;
+                font-size: 1.1em;
+                color: #333;
+                line-height: 1.6;
+            }
+
+            #kontakt .contact-info a {
+                color: #f00;
+                text-decoration: none;
+            }
+
+            #kontakt .contact-info a:hover {
+                text-decoration: underline;
+            }
+        </style>
+
+        <script>
+            AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+            gsap.from("#kontakt .section-title", { duration: 1, opacity: 0, y: -20, delay: 0.4 });
+            gsap.from("#kontakt .contact-info p", { duration: 1, opacity: 0, y: 20, stagger: 0.2, delay: 0.6 });
+        </script>
+        <footer>
+            <p>&copy; 2025 Piotr Siegoczyński. Wszelkie prawa zastrzeżone.</p>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script>AOS.init({ duration: 1000, easing: 'ease-in-out', once: true }); gsap.to(".hero-content h1", { duration: 1, opacity: 1, y: -20, delay: 0.5 }); gsap.to(".hero-content p", { duration: 1, opacity: 1, y: -20, delay: 0.7 });</script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+        <script>
+            const toggle = document.querySelector('.nav-toggle');
+            const menu = document.querySelector('.nav-list');
+
+            toggle.addEventListener('click', () => {
+                menu.classList.toggle('show');
+            });
+        </script>
+</body>
+
+</html>
